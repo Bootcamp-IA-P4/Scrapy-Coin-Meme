@@ -13,10 +13,14 @@
 ## Clone the Repository
 To clone the repository, run the following commands:
 ```sh
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
+git clone https://github.com/juancmacias/Scrapy-Coin-Meme.git
+cd Scrapy-Coin-Meme
+```
+
+## If the Repository Already Exists
+If the repository already exists, you can add the remote and push the changes:
+```sh
 git remote add origin https://github.com/juancmacias/Scrapy-Coin-Meme.git
+git branch -M main
 git push -u origin main
 ```
