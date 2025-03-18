@@ -1,0 +1,1 @@
+* * * * * export DISPLAY=:1 && /usr/bin/python3 /app/script-cron.py  >> /var/log/cron.log 2>&1

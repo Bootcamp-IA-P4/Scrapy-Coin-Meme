@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+
+    <title>Analisis meme coin</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+        }
+        
+    </style>
+</head>
+<body>
+  <div>Precio del dolares: {{ price_dola }} </div>
+    <table id="myTable" class="display">
+        <thead>
+          <tr>
+            <th>Ranck</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Volume</th>
+
+          </tr>
+        </thead>
+        
+            {% for crypto in cryptos["cryptos"] %}
+             
+            
+          <tr>
+            <td>{{ crypto["rank"] }}</td>
+            <td><img width="50px" src="{{ crypto['image_url'] }}" alt="{{ crypto['name'] }}" /></td>
+            <td>{{ crypto["name"] }}</td>
+            <td>{{ crypto["price"] }}</td>
+            <td>{{ crypto["volume"] }}</td>
+          </tr>
+          {% endfor %}
+      </table>
+      <br>
+      <div>
+        {{ lectura }}
+      </div>
+      <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+      </script>
+</body>
+</html>

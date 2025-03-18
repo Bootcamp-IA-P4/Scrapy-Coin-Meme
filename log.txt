@@ -1,0 +1,12 @@
+[2025-03-18 08:38:01.640234] Iniciando scraping
+[2025-03-18 08:38:01.645606] Precio del dolar: 10
+[2025-03-18 08:39:01.694073] Iniciando scraping
+[2025-03-18 08:39:01.695975] Precio del dolar: 10
+[2025-03-18 08:40:01.157459] Iniciando scraping
+[2025-03-18 08:40:01.159701] Precio del dolar: 10
+[2025-03-18 08:41:01.208435] Iniciando scraping
+[2025-03-18 08:41:01.210388] Precio del dolar: 10
+[2025-03-18 08:42:01.254267] Iniciando scraping
+[2025-03-18 08:42:01.256313] Precio del dolar: 10
+[2025-03-18 08:43:01.311475] Iniciando scraping
+[2025-03-18 08:43:01.313279] Precio del dolar: 10
