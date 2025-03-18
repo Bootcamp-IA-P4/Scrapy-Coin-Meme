@@ -10,6 +10,7 @@
     ```
 2. Wait for the resources to load
 
+
 ## Clone the Repository
 To clone the repository, run the following commands:
 ```sh
