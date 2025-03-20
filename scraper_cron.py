@@ -1,14 +1,15 @@
-from fastapi import FastAPI
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
+#from selenium.webdriver.chrome.options import Options
+#from selenium.webdriver.chrome.service import Service
+# firefox
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.firefox.options import Options
 import concurrent.futures
 import time
-from dotenv import load_dotenv
 import os
 
 
@@ -17,15 +18,14 @@ import os
 def get_driver():
     options = Options()
     #options = webdriver.ChromeOptions()
-    options.binary_location = os.getenv("CHROMIUM_PATH", ) # Ruta de Chrome en Heroku
-    options.add_argument("--headless=new")  # Ejecutar sin interfaz gráfica
+    #options.binary_location = os.getenv("CHROMIUM_PATH", ) # Ruta de Chrome en Heroku
+    options.add_argument("--headless")  # Ejecutar sin interfaz gráfica
     options.add_argument("--no-sandbox")
-    
     options.add_argument("--disable-dev-shm-usage")
     
     #service = Service(ChromeDriverManager().install())
     service = Service(os.getenv("CHROMEDRIVER_PATH")) # Ruta de ChromeDriver en Heroku
-    return webdriver.Chrome(service=service, options=options)
+    return webdriver.Firefox(service=service, options=options)
 
 
 # Función para hacer scroll gradualmente y esperar la carga
@@ -69,7 +69,8 @@ def extract_row_data(row):
 # Función principal de scraping
 def scrape_data():
     driver = get_driver()
-    driver.get("https://coinmarketcap.com/es/view/memes/")
+    #driver.get("https://coinmarketcap.com/es/view/memes/")
+    driver.get("https://coinmarketcap.com/es/")
     
     try:
         # Esperar a que la tabla aparezca

@@ -1,27 +1,31 @@
 import sys
 import os
-
+import time
+import re
 # Agregar la ruta del proyecto al PYTHONPATH
-sys.path.append("/app")
+
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+#from selenium.webdriver.chrome.service import Service
+#from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.firefox.options import Options
+import app.write_log as wr
 
 
-def price_dolar():
+def get_dolar():
     # Configurar opciones de Chrome para modo headless (sin abrir ventana)
     opciones = Options()
-    opciones.binary_location = os.getenv("CHROMIUM_PATH", )
+    #opciones.binary_location = os.getenv("CHROMIUM_PATH", )
     opciones.add_argument("--headless")
-    opciones.add_argument("--disable-gpu")
     opciones.add_argument("--no-sandbox")
+    opciones.add_argument("--disable-dev-shm-usage")
 
-    # Iniciar el driver
+    # Iniciar el driver en este caso GeckoDriver
     service = Service(os.getenv("CHROMEDRIVER_PATH"))
-    driver = webdriver.Chrome(service=service, options=opciones)
+    driver = webdriver.Firefox(service=service, options=opciones)
 
     try:
         # URL de la página a scrapear
@@ -31,12 +35,17 @@ def price_dolar():
         # Esperar a que cargue el elemento y obtener el precio
         #precio = driver.find_element(By.CSS_SELECTOR, ".embed-rate.span").text
          # Esperar hasta que el precio esté visible (máximo 10 segundos)
-        wait = WebDriverWait(driver, 15)
+        wait = WebDriverWait(driver, 5)
+        time.sleep(3)
         precio = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".embed-rate span"))).text
-
-        return precio
-        #print(f"Precio actual de Bitcoin: {precio}")
-
+        # precio = "EUR 1 = USD 1.0889 0.0059(0.5%)"
+        match_precio = re.search(r"USD ([\d.]+)", precio)
+        #print(f"Precio actual de dolar: {precio}")
+        valor_usd = ""
+        if match_precio:
+            valor_usd = float(match_precio.group(1))
+        wr.write_log(f"dolar: {valor_usd}, {precio}")
+        return valor_usd
     except Exception as e:
         return (f"Error: {e}")
     
