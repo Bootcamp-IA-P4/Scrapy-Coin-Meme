@@ -16,6 +16,7 @@ import app.write_log as wr
 
 
 def get_dolar():
+    wr.write_log("✅ Init get_driver")
     # Configurar opciones de Chrome para modo headless (sin abrir ventana)
     opciones = Options()
     #opciones.binary_location = os.getenv("CHROMIUM_PATH", )
@@ -28,6 +29,7 @@ def get_dolar():
     driver = webdriver.Firefox(service=service, options=opciones)
 
     try:
+        wr.write_log("✅ Init scraping on www.xe.com/es/currencyconverter/convert/?Amount=1&From=USD&To=EUR")
         # URL de la página a scrapear
         #url = "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.es.html"
         url = "https://www.xe.com/es/currencyconverter/convert/?Amount=1&From=USD&To=EUR"
@@ -44,7 +46,9 @@ def get_dolar():
         wr.write_log(f"Dolar:  {precio}")
         return precio
     except Exception as e:
+        print(f"❌ Error inti scraping: {e}")
         return (f"Error: {e}")
     
     finally:
+        wr.write_log("✅ Close driver")
         driver.quit()

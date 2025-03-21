@@ -55,7 +55,6 @@ RUN python -m pip install --no-cache-dir -r requirements.txt
 #ENV CHROMIUM_PATH="/usr/bin/chromium"
 ENV CHROMEDRIVER_PATH="/usr/local/bin/geckodriver"
 
-ENV MONGODB_URI="mongodb+srv://juancarlos:mVcT29ErVz5uV2lV@cluster0.fkh7n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 # Permisos en directorios
 RUN mkdir -p /app && \

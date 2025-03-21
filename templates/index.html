@@ -118,18 +118,32 @@
 
       
       <script type="text/javascript">
+        async function fetchData() {
+            const response = await fetch("/data");
+
+            try {
+                const ventas = await response.json();
+                console.log(ventas); // Para ver el resultado
+                // Transformar los datos a formato compatible
+                const data = [["Date", "Price"], ...ventas.map(v => [String(v.date), v.price])];
+
+                console.log(JSON.stringify(data)); // Para ver el resultado
+                return data;
+
+            } finally {
+                console.log("Error al obtener los datos");
+            }
+        }
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
-  
+        
         function drawChart() {
-          var data = google.visualization.arrayToDataTable([
-            ['Year', 'Sales', 'Expenses'],
-            ['2004',  1000,      400],
-            ['2005',  1170,      460],
-            ['2006',  660,       1120],
-            ['2007',  1030,      540]
-          ]);
-  
+          fetchData().then(data => {
+            var data = google.visualization.arrayToDataTable(JSON.stringify(data));
+              // Simulación de uso en Google Charts
+              console.log(`var data = google.visualization.arrayToDataTable(${JSON.stringify(data)});`);
+          });
+
           var options = {
             title: 'Euro',
             curveType: 'function',
@@ -153,7 +167,7 @@
           <h2>Grafica evolución dolar:</h2>
           <img src="{{ url_for('static', path='boton.png') }}" class="booton" title="Cerrar ventana" onclick="window.modal_dolar.close();" />
         </div>
-        <div id="curve_chart" style="width: 100%; height: 500px"></div>  
+        <div id="curve_chart" style="width: 100%;"></div>  
       </dialog>
       <script>
         $(document).ready( function () {

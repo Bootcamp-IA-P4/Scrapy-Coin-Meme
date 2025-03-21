@@ -15,6 +15,17 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory = "templates")
 
+@app.api_route("/data", methods=["GET", "POST"])
+async def show_database(request: Request):
+    try:
+        dolar_price = mc.get_data_euro()
+        wr.write_log(f"✅ Datos de dólar recuperados correctamente")
+        return {"dolar_price": dolar_price}
+    except Exception as e:
+        wr.write_log(f"❌ Error al recuperar datos: {e}")
+        print(f"❌ Error al recuperar datos: {e}")
+        return {"dolar_price": []}
+
 
 
 @app.get("/download")
