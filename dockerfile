@@ -47,13 +47,15 @@ RUN case $(dpkg --print-architecture) in \
     rm /tmp/geckodriver.tar.gz
 
 # Instalar dependencias py
-#RUN python -m pip install --upgrade pip
+RUN python -m pip install --upgrade pip
 COPY requirements.txt /app/
 RUN python -m pip install --no-cache-dir -r requirements.txt
 
-# Definir variables de entorno para Chromium
+# Definir variables de entorno 
 #ENV CHROMIUM_PATH="/usr/bin/chromium"
 ENV CHROMEDRIVER_PATH="/usr/local/bin/geckodriver"
+
+ENV MONGODB_URI="mongodb+srv://juancarlos:mVcT29ErVz5uV2lV@cluster0.fkh7n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 # Permisos en directorios
 RUN mkdir -p /app && \
@@ -70,8 +72,8 @@ RUN chmod  +x /app/script-cron_coin.py
 COPY . .
 # EStablecer el horario de cron
 ENV PATH="/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/sbin"
-RUN echo "*/3 * * * * DISPLAY=unix:0.0 /usr/local/bin/python /app/script-cron_dolar.py >> /var/log/cron.log 2>&1" > /etc/cron.d/cronfile_d
-RUN echo "*/10 * * * * DISPLAY=unix:0.0 /usr/local/bin/python /app/script-cron_coin.py >> /var/log/cron.log 2>&1" > /etc/cron.d/cronfile_d
+RUN echo "*/10 * * * * DISPLAY=unix:0.0 /usr/local/bin/python /app/script-cron_dolar.py >> /var/log/cron.log 2>&1" > /etc/cron.d/cronfile_d 
+RUN echo "*/10 * * * * DISPLAY=unix:0.0 /usr/local/bin/python /app/script-cron_coin.py >> /var/log/cron.log 2>&1" >> /etc/cron.d/cronfile_d
 
 # Dar permisos a los archivos cronfile
 RUN chmod 0644 /etc/cron.d/cronfile_d && \

@@ -10,7 +10,7 @@ def scrape_coin():
         future = executor.submit(sc.scrape_data)
         result = future.result()
         mc.save_coin_(datetime.now(), result)
-        wr.write_log(f"Se actulio los valores de las cripto monedas:{result['total']}")
+        wr.write_log(f"Scrapig de cripto monedas total:{result['total']} terminado")
 
 if __name__ == "__main__":
     wr.write_log("Init sc Coin")

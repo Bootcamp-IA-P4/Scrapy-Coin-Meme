@@ -6,7 +6,7 @@ import re
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 #from selenium.webdriver.chrome.service import Service
 #from selenium.webdriver.chrome.options import Options
@@ -29,23 +29,20 @@ def get_dolar():
 
     try:
         # URL de la página a scrapear
-        url = "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.es.html"
+        #url = "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.es.html"
+        url = "https://www.xe.com/es/currencyconverter/convert/?Amount=1&From=USD&To=EUR"
         driver.get(url)
-
+        
         # Esperar a que cargue el elemento y obtener el precio
         #precio = driver.find_element(By.CSS_SELECTOR, ".embed-rate.span").text
          # Esperar hasta que el precio esté visible (máximo 10 segundos)
         wait = WebDriverWait(driver, 5)
         time.sleep(3)
-        precio = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".embed-rate span"))).text
-        # precio = "EUR 1 = USD 1.0889 0.0059(0.5%)"
-        match_precio = re.search(r"USD ([\d.]+)", precio)
-        #print(f"Precio actual de dolar: {precio}")
-        valor_usd = ""
-        if match_precio:
-            valor_usd = float(match_precio.group(1))
-        wr.write_log(f"dolar: {valor_usd}, {precio}")
-        return valor_usd
+        precio = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".sc-294d8168-1"))).text
+        precio = precio.replace(" Euros", "")
+        precio = precio.replace(",", ".").strip()
+        wr.write_log(f"Dolar:  {precio}")
+        return precio
     except Exception as e:
         return (f"Error: {e}")
     

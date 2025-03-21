@@ -9,21 +9,81 @@
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <title>Analisis meme coin</title>
     <style>
         body {
-            margin: 0;
-            display: flex;
+          box-sizing: border-box;
+
+            margin: 0 auto;
+            max-width: 1024px;
             justify-content: center;
             align-items: flex-start;
             height: 100vh;
+            overflow: scroll;
+            background-color: rgba(21, 21, 222, 0.856);
         }
-        
+        h1,h2{margin: 0px;}
+        .header{
+          background: url("{{ url_for('static', path='fondo.jpeg') }}")
+          no-repeat center/cover !important;
+          height: 150px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .section {
+            flex: 1; /* Cada sección ocupa el mismo espacio */
+            align-items: center;
+            background: wheat;
+            gap: 20px; /* Espacio entre secciones */
+            ;
+        }
+        .rate {
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.6em;
+            color: rgb(14, 14, 215);
+            padding: 5px;
+        }
+        .rate div:nth-child(2) {
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+        }
+        .modal_menu div{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .menu{display: flex; flex-direction: row; justify-content: flex-end;}
+        .menu img {width: 30px; margin: 10px;}
+        dialog { max-width: 1024px;max-height: 500px;}
+        .booton {cursor: pointer;} 
     </style>
 </head>
 <body>
-  <div>Precio del dolares: {{ price_dola }} </div>
+  <header class="section header">
+    <h1>Analisis meme coin</h1>
+  </header>
+
+  <div class="section menu">
+    <a href="/download" title="Descargar archivo excel">
+      <img src="{{ url_for('static', path='descargar.png') }}" class="booton" />
+    </a>
+    
+    <img src="{{ url_for('static', path='desarrollo-de-estrategias.png') }}" class="booton" title="Ver archivo Log" onclick="window.modal1.showModal();" />
+  </div>
+  <section class="section rate">
+    <div>Last date: {{ last_date }} </div>
+    <div onclick="window.modal_dolar.showModal();">1 $ = {{ price_dolar }} €</div>
+  </section>
+  <section class="section">
     <table id="myTable" class="display">
         <thead>
           <tr>
@@ -37,21 +97,64 @@
         </thead>
         
             {% for crypto in cryptos %}
-             
+
+
             
           <tr>
             <td>{{ crypto["rank"] }}</td>
             <td><img width="50px" src="{{ crypto['image_url'] }}" alt="{{ crypto['name'] }}" /></td>
             <td>{{ crypto["name"] }}</td>
-            <td>{{ crypto["price"] }}</td>
+            <td>
+              {{ crypto["price"] }} $
+              <hr>
+              {{ crypto["euro"] }} €
+            </td>
             <td>{{ crypto["volume"] }}</td>
           </tr>
           {% endfor %}
       </table>
+      </section>
       <br>
-      <div>
-        {{ lectura }}
-      </div>
+
+      
+      <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Year', 'Sales', 'Expenses'],
+            ['2004',  1000,      400],
+            ['2005',  1170,      460],
+            ['2006',  660,       1120],
+            ['2007',  1030,      540]
+          ]);
+  
+          var options = {
+            title: 'Euro',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+  
+          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+  
+          chart.draw(data, options);
+        }
+      </script>
+      <dialog id="modal1" class="modal_menu">
+        <div>
+          <h2>Acciones:</h2>
+          <img src="{{ url_for('static', path='boton.png') }}" class="booton" title="Cerrar ventana" onclick="window.modal1.close();" />
+        </div>
+        <pre>{{ lectura }}</pre>
+      </dialog>
+      <dialog id="modal_dolar" class="modal_menu">
+        <div>
+          <h2>Grafica evolución dolar:</h2>
+          <img src="{{ url_for('static', path='boton.png') }}" class="booton" title="Cerrar ventana" onclick="window.modal_dolar.close();" />
+        </div>
+        <div id="curve_chart" style="width: 100%; height: 500px"></div>  
+      </dialog>
       <script>
         $(document).ready( function () {
             $('#myTable').DataTable();
