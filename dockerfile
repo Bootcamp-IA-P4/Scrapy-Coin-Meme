@@ -1,6 +1,6 @@
 # Usar la imagen oficial de Python
 ARG PYTHON_VERSION=3.11.11
-FROM python:${PYTHON_VERSION}-slim as base
+FROM python:${PYTHON_VERSION}-slim as builder
 #FROM python:3.10.8-slim
 #FROM selenium/standalone-chrome:latest 
 # Establecer el directorio de trabajo

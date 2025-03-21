@@ -10,12 +10,12 @@ import mongo.connect as mc
 import app.write_log as wr
 import app.archivo as arch
 
-app = FastAPI()
+app_f = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app_f.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory = "templates")
 
-@app.api_route("/data", methods=["GET", "POST"])
+@app_f.api_route("/data", methods=["GET", "POST"])
 async def show_database(request: Request):
     try:
         dolar_price = mc.get_data_euro()
@@ -28,7 +28,7 @@ async def show_database(request: Request):
 
 
 
-@app.get("/download")
+@app_f.get("/download")
 def excel(request: Request):
     try:
         result, last_date, price_dolar = mc.obtener_coleccion("recoleccion", datetime.now())
@@ -50,7 +50,7 @@ def excel(request: Request):
 
 # Endpoint para lanzar el scraping en un hilo separado
 
-@app.get("/", response_class=HTMLResponse)
+@app_f.get("/", response_class=HTMLResponse)
 def show_database_all(request: Request):
     try:
         result, last_date, price_dolar = mc.obtener_coleccion("recoleccion", datetime.now())  # Obtener datos de MongoDB
@@ -74,4 +74,4 @@ def show_database_all(request: Request):
     })
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app_f.run(debug=True)

@@ -71,7 +71,7 @@ def save_coin_(fecha_actual, datos):
         collection = db["recoleccion"]  # Nombre de la colección
         for doc in datos["cryptos"]:
             doc["date_id"] = id_fecha
-            doc["price"] = limpiar_precio(doc["price"])
+            doc["price"] = float(doc["price"].replace(",","."))
         collection.insert_many(datos["cryptos"])
         #resultado = collection.insert_one(documento)
         print("ID del documento insertado:",id_fecha)
