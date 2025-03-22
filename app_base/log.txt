@@ -33,3 +33,497 @@
 [2025-03-22 06:30:03.225766] ✅ Init scrape_data on coinmarketcap.com
 [2025-03-22 06:30:03.227901] ✅ Init get_driver
 [2025-03-22 06:30:11.064874] ✅ Init scraping on www.xe.com/es/currencyconverter/convert/?Amount=1&From=USD&To=EUR
+[2025-03-22 07:08:45.638064] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:08:45.776032] ✅ Datos recuperados correctamente
+[2025-03-22 07:09:02.758963] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:09:02.880937] ✅ Datos recuperados correctamente
+[2025-03-22 07:09:03.839205] 🚍 Conexión a MongoDB Atlas: Recuperar dolar
+[2025-03-22 07:09:03.875469] ✅ Datos de dólar recuperados correctamente
+[2025-03-22 07:10:02.691748] Init sc Coin
+[2025-03-22 07:10:02.700567] ✅ Init scrape_data on coinmarketcap.com
+[2025-03-22 07:10:02.704019] ✅ Init get_driver
+[2025-03-22 07:10:02.704963] Init sc Dolar
+[2025-03-22 07:10:02.708068] ✅ Init get_driver
+[2025-03-22 07:10:10.848907] ✅ Init scraping on www.xe.com/es/currencyconverter/convert/?Amount=1&From=USD&To=EUR
+[2025-03-22 07:10:14.893167] ✅ Init scroll_and_wait
+[2025-03-22 07:10:19.211837] Dolar:  0.92367581
+[2025-03-22 07:10:19.216116] ✅ Close driver
+[2025-03-22 07:10:21.736598] 🚍 Conexión a MongoDB Atlas: Insertar Dolar
+[2025-03-22 07:10:21.804760] Scraping Dolar finalizado
+[2025-03-22 07:10:31.314331] ✅ Init extract_row_data
+[2025-03-22 07:10:31.314658] ✅ Init extract_row_data
+[2025-03-22 07:10:31.314766] ✅ Init extract_row_data
+[2025-03-22 07:10:31.315108] ✅ Init extract_row_data
+[2025-03-22 07:10:31.315410] ✅ Init extract_row_data
+[2025-03-22 07:10:31.332367] ✅ Init extract_row_data
+[2025-03-22 07:10:31.339292] ✅ Init extract_row_data
+[2025-03-22 07:10:31.346859] ✅ Init extract_row_data
+[2025-03-22 07:10:31.356612] ✅ Init extract_row_data
+[2025-03-22 07:10:31.364308] ✅ Init extract_row_data
+[2025-03-22 07:10:31.373011] ✅ Init extract_row_data
+[2025-03-22 07:10:31.379923] ✅ Init extract_row_data
+[2025-03-22 07:10:31.387263] ✅ Init extract_row_data
+[2025-03-22 07:10:31.394356] ✅ Init extract_row_data
+[2025-03-22 07:10:31.401571] ✅ Init extract_row_data
+[2025-03-22 07:10:31.446897] ✅ Init extract_row_data
+[2025-03-22 07:10:31.447256] ✅ Init extract_row_data
+[2025-03-22 07:10:31.447661] ✅ Init extract_row_data
+[2025-03-22 07:10:31.447707] ✅ Init extract_row_data
+[2025-03-22 07:10:31.456963] ✅ Init extract_row_data
+[2025-03-22 07:10:31.466177] ✅ Init extract_row_data
+[2025-03-22 07:10:31.472481] ✅ Init extract_row_data
+[2025-03-22 07:10:31.480245] ✅ Init extract_row_data
+[2025-03-22 07:10:31.486672] ✅ Init extract_row_data
+[2025-03-22 07:10:31.491751] ✅ Init extract_row_data
+[2025-03-22 07:10:31.499048] ✅ Init extract_row_data
+[2025-03-22 07:10:31.506316] ✅ Init extract_row_data
+[2025-03-22 07:10:31.512194] ✅ Init extract_row_data
+[2025-03-22 07:10:31.519022] ✅ Init extract_row_data
+[2025-03-22 07:10:31.524654] ✅ Init extract_row_data
+[2025-03-22 07:10:31.530929] ✅ Init extract_row_data
+[2025-03-22 07:10:31.538871] ✅ Init extract_row_data
+[2025-03-22 07:10:31.546857] ✅ Init extract_row_data
+[2025-03-22 07:10:31.555703] ✅ Init extract_row_data
+[2025-03-22 07:10:31.558871] ✅ Init extract_row_data
+[2025-03-22 07:10:31.565178] ✅ Init extract_row_data
+[2025-03-22 07:10:31.571379] ✅ Init extract_row_data
+[2025-03-22 07:10:31.576224] ✅ Init extract_row_data
+[2025-03-22 07:10:31.582252] ✅ Init extract_row_data
+[2025-03-22 07:10:31.588134] ✅ Init extract_row_data
+[2025-03-22 07:10:31.595424] ✅ Init extract_row_data
+[2025-03-22 07:10:31.602386] ✅ Init extract_row_data
+[2025-03-22 07:10:31.607798] ✅ Init extract_row_data
+[2025-03-22 07:10:31.613005] ✅ Init extract_row_data
+[2025-03-22 07:10:31.619497] ✅ Init extract_row_data
+[2025-03-22 07:10:31.625086] ✅ Init extract_row_data
+[2025-03-22 07:10:31.631244] ✅ Init extract_row_data
+[2025-03-22 07:10:31.638878] ✅ Init extract_row_data
+[2025-03-22 07:10:31.645575] ✅ Init extract_row_data
+[2025-03-22 07:10:31.652035] ✅ Init extract_row_data
+[2025-03-22 07:10:31.659411] ✅ Init extract_row_data
+[2025-03-22 07:10:31.666797] ✅ Init extract_row_data
+[2025-03-22 07:10:31.677373] ✅ Init extract_row_data
+[2025-03-22 07:10:31.684533] ✅ Init extract_row_data
+[2025-03-22 07:10:31.691509] ✅ Init extract_row_data
+[2025-03-22 07:10:31.696947] ✅ Init extract_row_data
+[2025-03-22 07:10:31.704045] ✅ Init extract_row_data
+[2025-03-22 07:10:31.709475] ✅ Init extract_row_data
+[2025-03-22 07:10:31.715422] ✅ Init extract_row_data
+[2025-03-22 07:10:31.720661] ✅ Init extract_row_data
+[2025-03-22 07:10:31.725975] ✅ Init extract_row_data
+[2025-03-22 07:10:31.732221] ✅ Init extract_row_data
+[2025-03-22 07:10:31.738206] ✅ Init extract_row_data
+[2025-03-22 07:10:31.744759] ✅ Init extract_row_data
+[2025-03-22 07:10:31.750931] ✅ Init extract_row_data
+[2025-03-22 07:10:31.756276] ✅ Init extract_row_data
+[2025-03-22 07:10:31.762886] ✅ Init extract_row_data
+[2025-03-22 07:10:31.767896] ✅ Init extract_row_data
+[2025-03-22 07:10:31.775651] ✅ Init extract_row_data
+[2025-03-22 07:10:31.782010] ✅ Init extract_row_data
+[2025-03-22 07:10:31.788571] ✅ Init extract_row_data
+[2025-03-22 07:10:31.794714] ✅ Init extract_row_data
+[2025-03-22 07:10:31.800945] ✅ Init extract_row_data
+[2025-03-22 07:10:31.806270] ✅ Init extract_row_data
+[2025-03-22 07:10:31.863100] ✅ Init extract_row_data
+[2025-03-22 07:10:31.863389] ✅ Init extract_row_data
+[2025-03-22 07:10:31.863926] ✅ Init extract_row_data
+[2025-03-22 07:10:31.864206] ✅ Init extract_row_data
+[2025-03-22 07:10:31.864437] ✅ Init extract_row_data
+[2025-03-22 07:10:31.876160] ✅ Init extract_row_data
+[2025-03-22 07:10:31.882347] ✅ Init extract_row_data
+[2025-03-22 07:10:31.887495] ✅ Init extract_row_data
+[2025-03-22 07:10:31.902250] ✅ Init extract_row_data
+[2025-03-22 07:10:31.902868] ✅ Init extract_row_data
+[2025-03-22 07:10:31.906513] ✅ Init extract_row_data
+[2025-03-22 07:10:31.912112] ✅ Init extract_row_data
+[2025-03-22 07:10:31.917857] ✅ Init extract_row_data
+[2025-03-22 07:10:31.923503] ✅ Init extract_row_data
+[2025-03-22 07:10:31.928841] ✅ Init extract_row_data
+[2025-03-22 07:10:31.933889] ✅ Init extract_row_data
+[2025-03-22 07:10:31.939271] ✅ Init extract_row_data
+[2025-03-22 07:10:31.945330] ✅ Init extract_row_data
+[2025-03-22 07:10:31.950408] ✅ Init extract_row_data
+[2025-03-22 07:10:31.959141] ✅ Init extract_row_data
+[2025-03-22 07:10:31.962371] ✅ Init extract_row_data
+[2025-03-22 07:10:31.965725] ✅ Init extract_row_data
+[2025-03-22 07:10:31.970754] ✅ Init extract_row_data
+[2025-03-22 07:10:31.978339] ✅ Init extract_row_data
+[2025-03-22 07:10:31.983879] ✅ Init extract_row_data
+[2025-03-22 07:10:31.989098] ✅ Init extract_row_data
+[2025-03-22 07:10:32.014884] Closing driver
+[2025-03-22 07:10:33.978217] 🚍 Conexión a MongoDB Atlas: Insertar fecha
+[2025-03-22 07:10:34.014195] 📅 Fecha insertada: 67de6269616a0405e9f89c23
+[2025-03-22 07:10:34.479705] 🚍 Conexión a MongoDB Atlas: Insertar monedas
+[2025-03-22 07:10:34.511169] Scrapig de cripto monedas total:100 terminado
+[2025-03-22 07:13:06.446562] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:13:06.581548] ✅ Datos recuperados correctamente
+[2025-03-22 07:13:07.196605] 🚍 Conexión a MongoDB Atlas: Recuperar dolar
+[2025-03-22 07:13:07.233263] ✅ Datos de dólar recuperados correctamente
+[2025-03-22 07:20:03.172554] Init sc Dolar
+[2025-03-22 07:20:03.175383] ✅ Init get_driver
+[2025-03-22 07:20:03.181350] Init sc Coin
+[2025-03-22 07:20:03.188144] ✅ Init scrape_data on coinmarketcap.com
+[2025-03-22 07:20:03.192086] ✅ Init get_driver
+[2025-03-22 07:20:09.281967] ✅ Init scraping on www.xe.com/es/currencyconverter/convert/?Amount=1&From=USD&To=EUR
+[2025-03-22 07:20:14.222286] ✅ Init scroll_and_wait
+[2025-03-22 07:20:18.139813] Dolar:  0.92430021
+[2025-03-22 07:20:18.143836] ✅ Close driver
+[2025-03-22 07:20:20.481521] 🚍 Conexión a MongoDB Atlas: Insertar Dolar
+[2025-03-22 07:20:20.546590] Scraping Dolar finalizado
+[2025-03-22 07:20:26.932918] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:20:27.057807] ✅ Datos recuperados correctamente
+[2025-03-22 07:20:30.207772] ✅ Init extract_row_data
+[2025-03-22 07:20:30.208011] ✅ Init extract_row_data
+[2025-03-22 07:20:30.208443] ✅ Init extract_row_data
+[2025-03-22 07:20:30.208651] ✅ Init extract_row_data
+[2025-03-22 07:20:30.208832] ✅ Init extract_row_data
+[2025-03-22 07:20:30.223527] ✅ Init extract_row_data
+[2025-03-22 07:20:30.229487] ✅ Init extract_row_data
+[2025-03-22 07:20:30.239575] ✅ Init extract_row_data
+[2025-03-22 07:20:30.245444] ✅ Init extract_row_data
+[2025-03-22 07:20:30.252635] ✅ Init extract_row_data
+[2025-03-22 07:20:30.258106] ✅ Init extract_row_data
+[2025-03-22 07:20:30.265660] ✅ Init extract_row_data
+[2025-03-22 07:20:30.272968] ✅ Init extract_row_data
+[2025-03-22 07:20:30.278957] ✅ Init extract_row_data
+[2025-03-22 07:20:30.285177] ✅ Init extract_row_data
+[2025-03-22 07:20:30.292852] ✅ Init extract_row_data
+[2025-03-22 07:20:30.298689] ✅ Init extract_row_data
+[2025-03-22 07:20:30.307241] ✅ Init extract_row_data
+[2025-03-22 07:20:30.313792] ✅ Init extract_row_data
+[2025-03-22 07:20:30.320291] ✅ Init extract_row_data
+[2025-03-22 07:20:30.326501] ✅ Init extract_row_data
+[2025-03-22 07:20:30.332125] ✅ Init extract_row_data
+[2025-03-22 07:20:30.338557] ✅ Init extract_row_data
+[2025-03-22 07:20:30.344852] ✅ Init extract_row_data
+[2025-03-22 07:20:30.350288] ✅ Init extract_row_data
+[2025-03-22 07:20:30.356484] ✅ Init extract_row_data
+[2025-03-22 07:20:30.360982] ✅ Init extract_row_data
+[2025-03-22 07:20:30.366161] ✅ Init extract_row_data
+[2025-03-22 07:20:30.373629] ✅ Init extract_row_data
+[2025-03-22 07:20:30.379008] ✅ Init extract_row_data
+[2025-03-22 07:20:30.383002] ✅ Init extract_row_data
+[2025-03-22 07:20:30.389135] ✅ Init extract_row_data
+[2025-03-22 07:20:30.394299] ✅ Init extract_row_data
+[2025-03-22 07:20:30.400001] ✅ Init extract_row_data
+[2025-03-22 07:20:30.405716] ✅ Init extract_row_data
+[2025-03-22 07:20:30.411654] ✅ Init extract_row_data
+[2025-03-22 07:20:30.417971] ✅ Init extract_row_data
+[2025-03-22 07:20:30.422986] ✅ Init extract_row_data
+[2025-03-22 07:20:30.428611] ✅ Init extract_row_data
+[2025-03-22 07:20:30.433341] ✅ Init extract_row_data
+[2025-03-22 07:20:30.439123] ✅ Init extract_row_data
+[2025-03-22 07:20:30.445498] ✅ Init extract_row_data
+[2025-03-22 07:20:30.452291] ✅ Init extract_row_data
+[2025-03-22 07:20:30.456460] ✅ Init extract_row_data
+[2025-03-22 07:20:30.462670] ✅ Init extract_row_data
+[2025-03-22 07:20:30.467203] ✅ Init extract_row_data
+[2025-03-22 07:20:30.472467] ✅ Init extract_row_data
+[2025-03-22 07:20:30.478962] ✅ Init extract_row_data
+[2025-03-22 07:20:30.484420] ✅ Init extract_row_data
+[2025-03-22 07:20:30.490771] ✅ Init extract_row_data
+[2025-03-22 07:20:30.496457] ✅ Init extract_row_data
+[2025-03-22 07:20:30.504735] ✅ Init extract_row_data
+[2025-03-22 07:20:30.509825] ✅ Init extract_row_data
+[2025-03-22 07:20:30.515148] ✅ Init extract_row_data
+[2025-03-22 07:20:30.522081] ✅ Init extract_row_data
+[2025-03-22 07:20:30.527682] ✅ Init extract_row_data
+[2025-03-22 07:20:30.533239] ✅ Init extract_row_data
+[2025-03-22 07:20:30.538430] ✅ Init extract_row_data
+[2025-03-22 07:20:30.543430] ✅ Init extract_row_data
+[2025-03-22 07:20:30.549688] ✅ Init extract_row_data
+[2025-03-22 07:20:30.555139] ✅ Init extract_row_data
+[2025-03-22 07:20:30.560099] ✅ Init extract_row_data
+[2025-03-22 07:20:30.565293] ✅ Init extract_row_data
+[2025-03-22 07:20:30.571544] ✅ Init extract_row_data
+[2025-03-22 07:20:30.576923] ✅ Init extract_row_data
+[2025-03-22 07:20:30.582213] ✅ Init extract_row_data
+[2025-03-22 07:20:30.588329] ✅ Init extract_row_data
+[2025-03-22 07:20:30.593366] ✅ Init extract_row_data
+[2025-03-22 07:20:30.598398] ✅ Init extract_row_data
+[2025-03-22 07:20:30.604298] ✅ Init extract_row_data
+[2025-03-22 07:20:30.609273] ✅ Init extract_row_data
+[2025-03-22 07:20:30.614748] ✅ Init extract_row_data
+[2025-03-22 07:20:30.620508] ✅ Init extract_row_data
+[2025-03-22 07:20:30.625531] ✅ Init extract_row_data
+[2025-03-22 07:20:30.630518] ✅ Init extract_row_data
+[2025-03-22 07:20:30.638451] ✅ Init extract_row_data
+[2025-03-22 07:20:30.643674] ✅ Init extract_row_data
+[2025-03-22 07:20:30.650730] ✅ Init extract_row_data
+[2025-03-22 07:20:30.656453] ✅ Init extract_row_data
+[2025-03-22 07:20:30.662054] ✅ Init extract_row_data
+[2025-03-22 07:20:30.668481] ✅ Init extract_row_data
+[2025-03-22 07:20:30.673630] ✅ Init extract_row_data
+[2025-03-22 07:20:30.679278] ✅ Init extract_row_data
+[2025-03-22 07:20:30.686831] ✅ Init extract_row_data
+[2025-03-22 07:20:30.692200] ✅ Init extract_row_data
+[2025-03-22 07:20:30.698983] ✅ Init extract_row_data
+[2025-03-22 07:20:30.705266] ✅ Init extract_row_data
+[2025-03-22 07:20:30.710429] ✅ Init extract_row_data
+[2025-03-22 07:20:30.715678] ✅ Init extract_row_data
+[2025-03-22 07:20:30.722812] ✅ Init extract_row_data
+[2025-03-22 07:20:30.729109] ✅ Init extract_row_data
+[2025-03-22 07:20:30.736366] ✅ Init extract_row_data
+[2025-03-22 07:20:30.741475] ✅ Init extract_row_data
+[2025-03-22 07:20:30.746764] ✅ Init extract_row_data
+[2025-03-22 07:20:30.753636] ✅ Init extract_row_data
+[2025-03-22 07:20:30.759407] ✅ Init extract_row_data
+[2025-03-22 07:20:30.765987] ✅ Init extract_row_data
+[2025-03-22 07:20:30.775683] ✅ Init extract_row_data
+[2025-03-22 07:20:30.781000] ✅ Init extract_row_data
+[2025-03-22 07:20:30.788051] ✅ Init extract_row_data
+[2025-03-22 07:20:30.824008] Closing driver
+[2025-03-22 07:20:32.823359] 🚍 Conexión a MongoDB Atlas: Insertar fecha
+[2025-03-22 07:20:32.858775] 📅 Fecha insertada: 67de64c07943ea6b8b2a76dd
+[2025-03-22 07:20:33.319636] 🚍 Conexión a MongoDB Atlas: Insertar monedas
+[2025-03-22 07:20:33.350880] Scrapig de cripto monedas total:100 terminado
+[2025-03-22 07:22:56.590239] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:22:56.723863] ✅ Datos recuperados correctamente
+[2025-03-22 07:25:39.840339] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:25:39.977747] ✅ Datos recuperados correctamente
+[2025-03-22 07:28:01.574529] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:28:01.689049] ✅ Datos recuperados correctamente
+[2025-03-22 07:30:02.417031] Init sc Coin
+[2025-03-22 07:30:02.417022] Init sc Dolar
+[2025-03-22 07:30:02.420004] ✅ Init get_driver
+[2025-03-22 07:30:02.423378] ✅ Init scrape_data on coinmarketcap.com
+[2025-03-22 07:30:02.425603] ✅ Init get_driver
+[2025-03-22 07:30:07.885216] ✅ Init scraping on www.xe.com/es/currencyconverter/convert/?Amount=1&From=USD&To=EUR
+[2025-03-22 07:30:15.466265] Dolar:  0.92429994
+[2025-03-22 07:30:15.469319] ✅ Close driver
+[2025-03-22 07:30:17.886677] 🚍 Conexión a MongoDB Atlas: Insertar Dolar
+[2025-03-22 07:30:17.947743] Scraping Dolar finalizado
+[2025-03-22 07:31:25.722516] ✅ Init scroll_and_wait
+[2025-03-22 07:31:39.802070] ✅ Init extract_row_data
+[2025-03-22 07:31:39.802164] ✅ Init extract_row_data
+[2025-03-22 07:31:39.802286] ✅ Init extract_row_data
+[2025-03-22 07:31:39.802412] ✅ Init extract_row_data
+[2025-03-22 07:31:39.802576] ✅ Init extract_row_data
+[2025-03-22 07:31:39.819047] ✅ Init extract_row_data
+[2025-03-22 07:31:39.826703] ✅ Init extract_row_data
+[2025-03-22 07:31:39.834506] ✅ Init extract_row_data
+[2025-03-22 07:31:39.842418] ✅ Init extract_row_data
+[2025-03-22 07:31:39.851126] ✅ Init extract_row_data
+[2025-03-22 07:31:39.860980] ✅ Init extract_row_data
+[2025-03-22 07:31:39.870536] ✅ Init extract_row_data
+[2025-03-22 07:31:39.875862] ✅ Init extract_row_data
+[2025-03-22 07:31:39.882871] ✅ Init extract_row_data
+[2025-03-22 07:31:39.888069] ✅ Init extract_row_data
+[2025-03-22 07:31:39.893765] ✅ Init extract_row_data
+[2025-03-22 07:31:39.900750] ✅ Init extract_row_data
+[2025-03-22 07:31:39.906343] ✅ Init extract_row_data
+[2025-03-22 07:31:39.912096] ✅ Init extract_row_data
+[2025-03-22 07:31:39.917124] ✅ Init extract_row_data
+[2025-03-22 07:31:39.922516] ✅ Init extract_row_data
+[2025-03-22 07:31:39.927615] ✅ Init extract_row_data
+[2025-03-22 07:31:39.932883] ✅ Init extract_row_data
+[2025-03-22 07:31:39.937825] ✅ Init extract_row_data
+[2025-03-22 07:31:39.943391] ✅ Init extract_row_data
+[2025-03-22 07:31:39.949605] ✅ Init extract_row_data
+[2025-03-22 07:31:39.955187] ✅ Init extract_row_data
+[2025-03-22 07:31:39.959943] ✅ Init extract_row_data
+[2025-03-22 07:31:39.967567] ✅ Init extract_row_data
+[2025-03-22 07:31:39.972677] ✅ Init extract_row_data
+[2025-03-22 07:31:39.978105] ✅ Init extract_row_data
+[2025-03-22 07:31:39.983590] ✅ Init extract_row_data
+[2025-03-22 07:31:39.988221] ✅ Init extract_row_data
+[2025-03-22 07:31:39.993785] ✅ Init extract_row_data
+[2025-03-22 07:31:40.001243] ✅ Init extract_row_data
+[2025-03-22 07:31:40.007553] ✅ Init extract_row_data
+[2025-03-22 07:31:40.015479] ✅ Init extract_row_data
+[2025-03-22 07:31:40.020884] ✅ Init extract_row_data
+[2025-03-22 07:31:40.026295] ✅ Init extract_row_data
+[2025-03-22 07:31:40.033399] ✅ Init extract_row_data
+[2025-03-22 07:31:40.040086] ✅ Init extract_row_data
+[2025-03-22 07:31:40.045451] ✅ Init extract_row_data
+[2025-03-22 07:31:40.050754] ✅ Init extract_row_data
+[2025-03-22 07:31:40.055792] ✅ Init extract_row_data
+[2025-03-22 07:31:40.060539] ✅ Init extract_row_data
+[2025-03-22 07:31:40.069727] ✅ Init extract_row_data
+[2025-03-22 07:31:40.074719] ✅ Init extract_row_data
+[2025-03-22 07:31:40.081864] ✅ Init extract_row_data
+[2025-03-22 07:31:40.087085] ✅ Init extract_row_data
+[2025-03-22 07:31:40.093027] ✅ Init extract_row_data
+[2025-03-22 07:31:40.100238] ✅ Init extract_row_data
+[2025-03-22 07:31:40.105963] ✅ Init extract_row_data
+[2025-03-22 07:31:40.111579] ✅ Init extract_row_data
+[2025-03-22 07:31:40.117807] ✅ Init extract_row_data
+[2025-03-22 07:31:40.123559] ✅ Init extract_row_data
+[2025-03-22 07:31:40.132278] ✅ Init extract_row_data
+[2025-03-22 07:31:40.133004] ✅ Init extract_row_data
+[2025-03-22 07:31:40.139315] ✅ Init extract_row_data
+[2025-03-22 07:31:40.144449] ✅ Init extract_row_data
+[2025-03-22 07:31:40.150435] ✅ Init extract_row_data
+[2025-03-22 07:31:40.155798] ✅ Init extract_row_data
+[2025-03-22 07:31:40.160058] ✅ Init extract_row_data
+[2025-03-22 07:31:40.167290] ✅ Init extract_row_data
+[2025-03-22 07:31:40.172390] ✅ Init extract_row_data
+[2025-03-22 07:31:40.177103] ✅ Init extract_row_data
+[2025-03-22 07:31:40.184321] ✅ Init extract_row_data
+[2025-03-22 07:31:40.189054] ✅ Init extract_row_data
+[2025-03-22 07:31:40.193295] ✅ Init extract_row_data
+[2025-03-22 07:31:40.200078] ✅ Init extract_row_data
+[2025-03-22 07:31:40.205118] ✅ Init extract_row_data
+[2025-03-22 07:31:40.211322] ✅ Init extract_row_data
+[2025-03-22 07:31:40.218185] ✅ Init extract_row_data
+[2025-03-22 07:31:40.223123] ✅ Init extract_row_data
+[2025-03-22 07:31:40.233505] ✅ Init extract_row_data
+[2025-03-22 07:31:40.235018] ✅ Init extract_row_data
+[2025-03-22 07:31:40.239731] ✅ Init extract_row_data
+[2025-03-22 07:31:40.244360] ✅ Init extract_row_data
+[2025-03-22 07:31:40.251293] ✅ Init extract_row_data
+[2025-03-22 07:31:40.256837] ✅ Init extract_row_data
+[2025-03-22 07:31:40.261017] ✅ Init extract_row_data
+[2025-03-22 07:31:40.266549] ✅ Init extract_row_data
+[2025-03-22 07:31:40.271975] ✅ Init extract_row_data
+[2025-03-22 07:31:40.276564] ✅ Init extract_row_data
+[2025-03-22 07:31:40.282902] ✅ Init extract_row_data
+[2025-03-22 07:31:40.288416] ✅ Init extract_row_data
+[2025-03-22 07:31:40.293619] ✅ Init extract_row_data
+[2025-03-22 07:31:40.300813] ✅ Init extract_row_data
+[2025-03-22 07:31:40.305517] ✅ Init extract_row_data
+[2025-03-22 07:31:40.309989] ✅ Init extract_row_data
+[2025-03-22 07:31:40.316836] ✅ Init extract_row_data
+[2025-03-22 07:31:40.321866] ✅ Init extract_row_data
+[2025-03-22 07:31:40.327095] ✅ Init extract_row_data
+[2025-03-22 07:31:40.334079] ✅ Init extract_row_data
+[2025-03-22 07:31:40.338792] ✅ Init extract_row_data
+[2025-03-22 07:31:40.343545] ✅ Init extract_row_data
+[2025-03-22 07:31:40.349795] ✅ Init extract_row_data
+[2025-03-22 07:31:40.355385] ✅ Init extract_row_data
+[2025-03-22 07:31:40.361127] ✅ Init extract_row_data
+[2025-03-22 07:31:40.370381] ✅ Init extract_row_data
+[2025-03-22 07:31:40.375387] ✅ Init extract_row_data
+[2025-03-22 07:31:40.421367] Closing driver
+[2025-03-22 07:31:42.480153] 🚍 Conexión a MongoDB Atlas: Insertar fecha
+[2025-03-22 07:31:42.520520] 📅 Fecha insertada: 67de675ea0119ce659bec4b0
+[2025-03-22 07:31:43.007770] 🚍 Conexión a MongoDB Atlas: Insertar monedas
+[2025-03-22 07:31:43.039219] Scrapig de cripto monedas total:100 terminado
+[2025-03-22 07:35:50.593849] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:35:50.739826] ✅ Datos recuperados correctamente
+[2025-03-22 07:37:40.839307] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:37:40.994127] ✅ Datos recuperados correctamente
+[2025-03-22 07:39:52.021448] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:39:52.179539] ✅ Datos recuperados correctamente
+[2025-03-22 07:40:02.805530] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:40:02.991041] ✅ Datos recuperados correctamente
+[2025-03-22 07:40:03.190187] Init sc Dolar
+[2025-03-22 07:40:03.193341] ✅ Init get_driver
+[2025-03-22 07:40:03.238366] Init sc Coin
+[2025-03-22 07:40:03.245116] ✅ Init scrape_data on coinmarketcap.com
+[2025-03-22 07:40:03.249188] ✅ Init get_driver
+[2025-03-22 07:40:03.683211] 🚍 Conexión a MongoDB Atlas: Recuperar dolar
+[2025-03-22 07:40:03.719824] ✅ Datos de dólar recuperados correctamente
+[2025-03-22 07:40:09.336244] ✅ Init scraping on www.xe.com/es/currencyconverter/convert/?Amount=1&From=USD&To=EUR
+[2025-03-22 07:40:13.649616] ✅ Init scroll_and_wait
+[2025-03-22 07:40:17.971157] Dolar:  0.92415989
+[2025-03-22 07:40:17.981945] ✅ Close driver
+[2025-03-22 07:40:20.360925] 🚍 Conexión a MongoDB Atlas: Insertar Dolar
+[2025-03-22 07:40:20.423493] Scraping Dolar finalizado
+[2025-03-22 07:40:28.990273] ✅ Init extract_row_data
+[2025-03-22 07:40:28.990577] ✅ Init extract_row_data
+[2025-03-22 07:40:28.990674] ✅ Init extract_row_data
+[2025-03-22 07:40:28.990980] ✅ Init extract_row_data
+[2025-03-22 07:40:28.991053] ✅ Init extract_row_data
+[2025-03-22 07:40:29.004267] ✅ Init extract_row_data
+[2025-03-22 07:40:29.011057] ✅ Init extract_row_data
+[2025-03-22 07:40:29.017907] ✅ Init extract_row_data
+[2025-03-22 07:40:29.025665] ✅ Init extract_row_data
+[2025-03-22 07:40:29.034360] ✅ Init extract_row_data
+[2025-03-22 07:40:29.040567] ✅ Init extract_row_data
+[2025-03-22 07:40:29.048137] ✅ Init extract_row_data
+[2025-03-22 07:40:29.054465] ✅ Init extract_row_data
+[2025-03-22 07:40:29.061116] ✅ Init extract_row_data
+[2025-03-22 07:40:29.068013] ✅ Init extract_row_data
+[2025-03-22 07:40:29.074955] ✅ Init extract_row_data
+[2025-03-22 07:40:29.082431] ✅ Init extract_row_data
+[2025-03-22 07:40:29.088939] ✅ Init extract_row_data
+[2025-03-22 07:40:29.094386] ✅ Init extract_row_data
+[2025-03-22 07:40:29.099553] ✅ Init extract_row_data
+[2025-03-22 07:40:29.105971] ✅ Init extract_row_data
+[2025-03-22 07:40:29.111222] ✅ Init extract_row_data
+[2025-03-22 07:40:29.116832] ✅ Init extract_row_data
+[2025-03-22 07:40:29.121727] ✅ Init extract_row_data
+[2025-03-22 07:40:29.126875] ✅ Init extract_row_data
+[2025-03-22 07:40:29.133095] ✅ Init extract_row_data
+[2025-03-22 07:40:29.139224] ✅ Init extract_row_data
+[2025-03-22 07:40:29.144758] ✅ Init extract_row_data
+[2025-03-22 07:40:29.150616] ✅ Init extract_row_data
+[2025-03-22 07:40:29.156210] ✅ Init extract_row_data
+[2025-03-22 07:40:29.164481] ✅ Init extract_row_data
+[2025-03-22 07:40:29.169759] ✅ Init extract_row_data
+[2025-03-22 07:40:29.175678] ✅ Init extract_row_data
+[2025-03-22 07:40:29.182260] ✅ Init extract_row_data
+[2025-03-22 07:40:29.188253] ✅ Init extract_row_data
+[2025-03-22 07:40:29.193510] ✅ Init extract_row_data
+[2025-03-22 07:40:29.199730] ✅ Init extract_row_data
+[2025-03-22 07:40:29.204733] ✅ Init extract_row_data
+[2025-03-22 07:40:29.209798] ✅ Init extract_row_data
+[2025-03-22 07:40:29.215789] ✅ Init extract_row_data
+[2025-03-22 07:40:29.221991] ✅ Init extract_row_data
+[2025-03-22 07:40:29.227198] ✅ Init extract_row_data
+[2025-03-22 07:40:29.232723] ✅ Init extract_row_data
+[2025-03-22 07:40:29.237724] ✅ Init extract_row_data
+[2025-03-22 07:40:29.243540] ✅ Init extract_row_data
+[2025-03-22 07:40:29.250267] ✅ Init extract_row_data
+[2025-03-22 07:40:29.255518] ✅ Init extract_row_data
+[2025-03-22 07:40:29.260744] ✅ Init extract_row_data
+[2025-03-22 07:40:29.265819] ✅ Init extract_row_data
+[2025-03-22 07:40:29.272487] ✅ Init extract_row_data
+[2025-03-22 07:40:29.277907] ✅ Init extract_row_data
+[2025-03-22 07:40:29.283520] ✅ Init extract_row_data
+[2025-03-22 07:40:29.298487] ✅ Init extract_row_data
+[2025-03-22 07:40:29.305264] ✅ Init extract_row_data
+[2025-03-22 07:40:29.311196] ✅ Init extract_row_data
+[2025-03-22 07:40:29.315847] ✅ Init extract_row_data
+[2025-03-22 07:40:29.321273] ✅ Init extract_row_data
+[2025-03-22 07:40:29.337735] ✅ Init extract_row_data
+[2025-03-22 07:40:29.342868] ✅ Init extract_row_data
+[2025-03-22 07:40:29.348988] ✅ Init extract_row_data
+[2025-03-22 07:40:29.354036] ✅ Init extract_row_data
+[2025-03-22 07:40:29.359733] ✅ Init extract_row_data
+[2025-03-22 07:40:29.364894] ✅ Init extract_row_data
+[2025-03-22 07:40:29.370141] ✅ Init extract_row_data
+[2025-03-22 07:40:29.374611] ✅ Init extract_row_data
+[2025-03-22 07:40:29.380503] ✅ Init extract_row_data
+[2025-03-22 07:40:29.385670] ✅ Init extract_row_data
+[2025-03-22 07:40:29.390646] ✅ Init extract_row_data
+[2025-03-22 07:40:29.396828] ✅ Init extract_row_data
+[2025-03-22 07:40:29.402340] ✅ Init extract_row_data
+[2025-03-22 07:40:29.407381] ✅ Init extract_row_data
+[2025-03-22 07:40:29.412894] ✅ Init extract_row_data
+[2025-03-22 07:40:29.418567] ✅ Init extract_row_data
+[2025-03-22 07:40:29.423563] ✅ Init extract_row_data
+[2025-03-22 07:40:29.429404] ✅ Init extract_row_data
+[2025-03-22 07:40:29.433640] ✅ Init extract_row_data
+[2025-03-22 07:40:29.439065] ✅ Init extract_row_data
+[2025-03-22 07:40:29.443939] ✅ Init extract_row_data
+[2025-03-22 07:40:29.449147] ✅ Init extract_row_data
+[2025-03-22 07:40:29.453926] ✅ Init extract_row_data
+[2025-03-22 07:40:29.459167] ✅ Init extract_row_data
+[2025-03-22 07:40:29.464876] ✅ Init extract_row_data
+[2025-03-22 07:40:29.469112] ✅ Init extract_row_data
+[2025-03-22 07:40:29.474156] ✅ Init extract_row_data
+[2025-03-22 07:40:29.480268] ✅ Init extract_row_data
+[2025-03-22 07:40:29.485455] ✅ Init extract_row_data
+[2025-03-22 07:40:29.501431] ✅ Init extract_row_data
+[2025-03-22 07:40:29.507303] ✅ Init extract_row_data
+[2025-03-22 07:40:29.512858] ✅ Init extract_row_data
+[2025-03-22 07:40:29.518347] ✅ Init extract_row_data
+[2025-03-22 07:40:29.523148] ✅ Init extract_row_data
+[2025-03-22 07:40:29.527953] ✅ Init extract_row_data
+[2025-03-22 07:40:29.533589] ✅ Init extract_row_data
+[2025-03-22 07:40:29.539053] ✅ Init extract_row_data
+[2025-03-22 07:40:29.543961] ✅ Init extract_row_data
+[2025-03-22 07:40:29.549040] ✅ Init extract_row_data
+[2025-03-22 07:40:29.553576] ✅ Init extract_row_data
+[2025-03-22 07:40:29.561113] ✅ Init extract_row_data
+[2025-03-22 07:40:29.566315] ✅ Init extract_row_data
+[2025-03-22 07:40:29.571088] ✅ Init extract_row_data
+[2025-03-22 07:40:29.598663] Closing driver
+[2025-03-22 07:40:31.530630] 🚍 Conexión a MongoDB Atlas: Insertar fecha
+[2025-03-22 07:40:31.569661] 📅 Fecha insertada: 67de696fad90d7aeae40cd7d
+[2025-03-22 07:40:32.081235] 🚍 Conexión a MongoDB Atlas: Insertar monedas
+[2025-03-22 07:40:32.117200] Scrapig de cripto monedas total:100 terminado
+[2025-03-22 07:40:56.931442] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:40:57.388000] 📊 Archivo Excel generado: /app/mcdH54uxYo.xlsx

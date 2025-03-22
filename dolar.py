@@ -46,7 +46,7 @@ def get_dolar():
         wr.write_log(f"Dolar:  {precio}")
         return precio
     except Exception as e:
-        print(f"❌ Error inti scraping: {e}")
+        print(f"❌ dolar.py Error inti scraping: {e}")
         return (f"Error: {e}")
     
     finally:

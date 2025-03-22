@@ -17,7 +17,7 @@ def obtener_conexion(conect):
         wr.write_log(f"🚍 Conexión a MongoDB Atlas: {conect}")
         return client
     except ConnectionFailure as e:
-        print(f"❌ Error de conexión: {e}")
+        print(f"❌ connect.py/obtener_conexion Error de conexión: {e}")
         return None
 # insert data dolar
 def guardar_precio_dolar(fecha, precio):
@@ -96,7 +96,7 @@ def obtener_coleccion(name_coleccion, date_first):
         ultimo_dolar = collection.find_one(sort=[("_id", -1)])  # Recupera el último documento por _id
         return documentos, ultimo_date["date"], ultimo_dolar["price"]
     except Exception as e:
-        print(f"❌ Error al obtener colección: {e}, {name_coleccion}")
+        print(f"❌ connect.py/obtener_coleccion Error al obtener colección: {e}, {name_coleccion}")
         wr.write_log(f"❌ Error al obtener colección: {e}, {name_coleccion}")
         return []
     finally:
@@ -112,7 +112,7 @@ def get_data_euro():
         wr.write_log(f"✅ Datos de euro chart: {len(documentos)}")
         return documentos
     except Exception as e:
-        print(f"❌ Error al obtener euro chart: {e}")
+        print(f"❌ connect.py/get_data_euro Error al obtener euro chart: {e}")
         return []
     finally:
         client.close()  # Cierra la conexión después de la operación

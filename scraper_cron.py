@@ -68,7 +68,7 @@ def extract_row_data(row):
         """
         return row.parent.execute_script(script, row)
     except Exception as e:
-        print(f"❌ Error obtención scraping: {e}")
+        print(f"❌ scraper_cron.py Error obtención scraping: {e}")
         return {"error": str(e)}
 
 # Función principal de scraping
@@ -101,7 +101,7 @@ def scrape_data():
         return {"total": total_elements, "cryptos": cryptos}
 
     except Exception as e:
-        print(f"❌ Error on init scraping: {e}")
+        print(f"❌ scraper_cron.py Error on init scraping: {e}")
         return {"error": str(e)}
 
     finally:

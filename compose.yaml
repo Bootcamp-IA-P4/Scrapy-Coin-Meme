@@ -12,6 +12,7 @@ services:
 
   test:
     build: .
+    container_name: F-API-TEST
     environment:
       - LOG_FILE=/log.txt
       - PYTHONPATH=/app  # Agregar la ruta del código fuente
