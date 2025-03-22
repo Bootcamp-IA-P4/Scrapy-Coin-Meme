@@ -12,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 #from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
-import app.write_log as wr
+import app_base.write_log as wr
 
 
 def get_dolar():

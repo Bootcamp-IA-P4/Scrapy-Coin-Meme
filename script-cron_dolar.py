@@ -2,7 +2,7 @@
 from datetime import datetime
 import dolar as dl
 import mongo.connect as mc
-import app.write_log as wr
+import app_base.write_log as wr
 
 def scrape_dolar():
     precio = dl.get_dolar()

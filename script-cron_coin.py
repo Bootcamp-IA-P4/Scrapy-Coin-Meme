@@ -3,7 +3,7 @@ from datetime import datetime
 import concurrent.futures
 import scraper_cron as sc
 import mongo.connect as mc
-import app.write_log as wr
+import app_base.write_log as wr
 
 def scrape_coin():
     with concurrent.futures.ThreadPoolExecutor() as executor:

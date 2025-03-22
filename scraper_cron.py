@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
 import concurrent.futures
-import app.write_log as wr
+import app_base.write_log as wr
 import time
 import os
 

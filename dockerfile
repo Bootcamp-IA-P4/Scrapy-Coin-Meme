@@ -54,7 +54,10 @@ RUN python -m pip install --no-cache-dir -r requirements.txt
 # Definir variables de entorno 
 #ENV CHROMIUM_PATH="/usr/bin/chromium"
 ENV CHROMEDRIVER_PATH="/usr/local/bin/geckodriver"
+ENV LOG_TXT="log.txt"
+COPY log.txt /app/${LOG_TXT}
 
+ENV PYTHONPATH=/app
 
 # Permisos en directorios
 RUN mkdir -p /app && \
@@ -88,4 +91,4 @@ EXPOSE 8000
 #RUN chmod +x /start.sh
 #CMD ["/start.sh"]
 #CMD service cron start && uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-CMD ["sh", "-c", "service cron start && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"]
+CMD ["sh", "-c", "service cron start && uvicorn app_base.main:app --host 0.0.0.0 --port 8000 --reload"]

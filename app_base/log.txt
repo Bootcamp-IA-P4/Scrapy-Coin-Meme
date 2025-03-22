@@ -1,0 +1,35 @@
+[2025-03-22 06:38:29.613826] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 06:38:29.755192] ✅ Datos recuperados correctamente
+[2025-03-22 06:38:38.867640] 🚍 Conexión a MongoDB Atlas: Recuperar dolar
+[2025-03-22 06:38:38.897223] ✅ Datos de dólar recuperados correctamente
+[2025-03-22 05:40:02.840828] Init sc Dolar
+[2025-03-22 05:40:02.843826] ✅ Init get_driver
+[2025-03-22 05:40:02.851191] Init sc Coin
+[2025-03-22 05:40:02.858435] ✅ Init scrape_data on coinmarketcap.com
+[2025-03-22 05:40:02.861161] ✅ Init get_driver
+[2025-03-22 07:03:19.069362] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:03:19.201592] ✅ Datos recuperados correctamente
+[2025-03-22 07:03:27.856436] 🚍 Conexión a MongoDB Atlas: Recuperar dolar
+[2025-03-22 07:03:27.884430] ✅ Datos de dólar recuperados correctamente
+[2025-03-22 07:08:37.550049] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 07:08:37.678606] ✅ Datos recuperados correctamente
+[2025-03-22 07:08:46.238888] 🚍 Conexión a MongoDB Atlas: Recuperar dolar
+[2025-03-22 07:08:46.269128] ✅ Datos de dólar recuperados correctamente
+[2025-03-22 06:10:03.255127] Init sc Coin
+[2025-03-22 06:10:03.262187] ✅ Init scrape_data on coinmarketcap.com
+[2025-03-22 06:10:03.264852] ✅ Init get_driver
+[2025-03-22 06:10:03.264942] Init sc Dolar
+[2025-03-22 06:10:03.267678] ✅ Init get_driver
+[2025-03-22 06:20:02.657439] Init sc Coin
+[2025-03-22 06:20:02.662397] Init sc Dolar
+[2025-03-22 06:20:02.663548] ✅ Init scrape_data on coinmarketcap.com
+[2025-03-22 06:20:02.663960] ✅ Init get_driver
+[2025-03-22 06:20:02.665136] ✅ Init get_driver
+[2025-03-22 06:23:36.711062] 🚍 Conexión a MongoDB Atlas: Recuperar colecciones
+[2025-03-22 06:23:36.849192] ✅ Datos recuperados correctamente
+[2025-03-22 06:30:03.219572] Init sc Dolar
+[2025-03-22 06:30:03.219701] Init sc Coin
+[2025-03-22 06:30:03.221050] ✅ Init get_driver
+[2025-03-22 06:30:03.225766] ✅ Init scrape_data on coinmarketcap.com
+[2025-03-22 06:30:03.227901] ✅ Init get_driver
+[2025-03-22 06:30:11.064874] ✅ Init scraping on www.xe.com/es/currencyconverter/convert/?Amount=1&From=USD&To=EUR

@@ -2,7 +2,7 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from pymongo.errors import ConnectionFailure
 import os
-import app.write_log as wr
+import app_base.write_log as wr
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 load_dotenv()
