@@ -12,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 #from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
-import app.write_log as wr
+import app_base.write_log as wr
 
 
 def get_dolar():
@@ -46,7 +46,7 @@ def get_dolar():
         wr.write_log(f"Dolar:  {precio}")
         return precio
     except Exception as e:
-        print(f"❌ Error inti scraping: {e}")
+        print(f"❌ dolar.py Error inti scraping: {e}")
         return (f"Error: {e}")
     
     finally:

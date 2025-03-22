@@ -4,11 +4,11 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import pandas as pd
 from datetime import datetime
-from app.cadenas_ale import generar_cadena_aleatoria
+from app_base.cadenas_ale import generar_cadena_aleatoria
 
 import mongo.connect as mc
-import app.write_log as wr
-import app.archivo as arch
+import app_base.write_log as wr
+import app_base.archivo as arch
 
 app = FastAPI()
 

@@ -7,5 +7,18 @@ services:
     ports:
       - "8000:8000"
     container_name: F-API
-    
+
+
+
+  test:
+    build: .
+    container_name: F-API-TEST
+    environment:
+      - LOG_FILE=/log.txt
+      - PYTHONPATH=/app  # Agregar la ruta del código fuente
+    volumes:
+      - .:/app
+      - ./log:/log
+      - ./tests:/tests
+    command: pytest tests/
     
