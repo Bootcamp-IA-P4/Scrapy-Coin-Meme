@@ -1,5 +1,4 @@
 # Meme Coin Scraping
-Dia
 ## ⚙️ Recommended Technologies
 - (⊙_⊙;)**Version Control**: Git / GitHub
 - (⊙_⊙;)**Runtime Environment**: Docker
@@ -31,7 +30,7 @@ Dia
 - ❌ Uso de Programación Orientada a Objetos (OOP) para mejorar la estructura del código.
 -  Manejo robusto de errores para evitar bloqueos y baneos de IP.
 - ✅ Automatización del scraper para actualizar periódicamente la base de datos con tareas Cron.
-    - Obtención de monedas
+    - Obtención de meme coin
     - Obtención del Dolar Euro
 
 ### 🔴 Nivel Experto:

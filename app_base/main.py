@@ -1,7 +1,7 @@
 import os
 from fastapi import FastAPI, Request, Form,  Response, Query, Depends, HTTPException, WebSocket
 from fastapi.security import OAuth2PasswordBearer
-from fastapi.responses import HTMLResponse, RedirectResponse, FileResponse
+from fastapi.responses import HTMLResponse, RedirectResponse, FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
@@ -11,7 +11,7 @@ import pandas as pd
 from datetime import datetime
 from app_base.websocket.manager_websocket import websocket_endpoint
 from app_base.cadenas_ale import generar_cadena_aleatoria
-
+import scraping.pdf as pdf
 import mongo.connect as mc
 import app_base.write_log as wr
 import app_base.archivo as arch
@@ -60,6 +60,13 @@ async def protected_route(token: str = Depends(oauth2_scheme)):
     return {"message": f"Hello, {credentials['username']}! This is a protected route."}
 
 # LOGIN ---
+# para scrpaing pdf
+@app.api_route("/pdf", methods=["GET", "POST"])	
+async def show_pdf(mensaje: str = Form(...)):
+    return JSONResponse( content={"respuesta": pdf.sraper_pdf(mensaje)})
+
+
+# para grafico de evolucion euros
 @app.api_route("/data", methods=["GET", "POST"])
 async def show_database(range: str = Query("day", enum=["day", "week", "month", "year"])):
     try:
