@@ -17,7 +17,7 @@
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
     ></script>
-    <title>Analisis meme coin</title>
+    <title>Análisis meme coin</title>
     <style>
       body {
         box-sizing: border-box;
@@ -127,7 +127,7 @@
   </head>
   <body>
     <header class="section header">
-      <h1>Analisis meme coin</h1>
+      <h1>Análisis meme coin</h1>
     </header>
 
     <div class="section rate_cabecera">
@@ -141,7 +141,7 @@
           🔔 Notificaciones
         </div>
         <script>
-          const socket = new WebSocket("ws://localhost:8000/ws");
+          const socket = new WebSocket("wss://scraping-v1-0.onrender.com/ws");
           const notificacion = document.getElementById("notificacion");
           notificacion.style.display = "none"; 
           socket.onmessage = function (event) {
@@ -155,7 +155,7 @@
           };
 
           function ocultarNotificacion() {
-            notificacion.style.display = "none";
+            window.location.reload(true);
           }
         </script>
       </div>
