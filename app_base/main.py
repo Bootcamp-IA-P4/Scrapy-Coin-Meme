@@ -11,7 +11,7 @@ import pandas as pd
 from datetime import datetime
 from app_base.websocket.manager_websocket import websocket_endpoint
 from app_base.cadenas_ale import generar_cadena_aleatoria
-import scraping.pdf as pdf
+
 import mongo.connect as mc
 import app_base.write_log as wr
 import app_base.archivo as arch
@@ -63,7 +63,7 @@ async def protected_route(token: str = Depends(oauth2_scheme)):
 # para scrpaing pdf
 @app.api_route("/pdf", methods=["GET", "POST"])	
 async def show_pdf(mensaje: str = Form(...)):
-    return JSONResponse( content={"respuesta": pdf.sraper_pdf(mensaje)})
+    return JSONResponse( content={"respuesta": f"pendiente de hacer{mensaje}"}, status_code=200)
 
 
 # para grafico de evolucion euros
