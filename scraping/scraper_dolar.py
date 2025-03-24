@@ -42,7 +42,7 @@ def get_dolar():
         time.sleep(3)
         precio = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".sc-294d8168-1"))).text
         precio = precio.replace(" Euros", "")
-        precio = precio.replace(",", ".").strip()
+
         wr.write_log(f"Dolar:  {precio}")
         return precio
     except Exception as e:

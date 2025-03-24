@@ -73,6 +73,35 @@
   </header>
 
   <div class="section menu">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+          {% if request.session.get('username') %}
+          <li class="nav-item">
+              <span class="nav-link" onclick="window.modal_auth.showModal();">Welcome, {{ request.session.get('username') }}</span>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+          </li>
+          <dialog id="modal_auth" class="modal_menu">
+            <div>
+              <h2>Mis datos:</h2>
+              <img src="{{ url_for('static', path='boton.png') }}" class="booton" title="Cerrar ventana" onclick="window.modal_auth.close();" />
+            </div>
+            <p>{{ request.session.get('username') }}</p>
+            <p>{{ request.session.get('id') }}</p>
+            <p>{{ request.session.get('password') }}</p>
+
+          </dialog>
+          {% else %}
+          <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/register">Register</a>
+          </li>
+          {% endif %}
+      </ul>
+  </div>
     <a href="/download" title="Descargar archivo excel">
       <img src="{{ url_for('static', path='descargar.png') }}" class="booton" />
     </a>
@@ -91,70 +120,30 @@
             <th>Image</th>
             <th>Name</th>
             <th>Price</th>
-            <th>Volume</th>
-
+            <th>Tendencia 1h</th>
+            <th>Grafica</th>
           </tr>
         </thead>
         
             {% for crypto in cryptos %}
-
-
-            
           <tr>
             <td>{{ crypto["rank"] }}</td>
             <td><img width="50px" src="{{ crypto['image_url'] }}" alt="{{ crypto['name'] }}" /></td>
             <td>{{ crypto["name"] }}</td>
-            <td>
+            <td style="text-align: end;">
               {{ crypto["price"] }} $
               <hr>
               {{ crypto["euro"] }} €
             </td>
-            <td>{{ crypto["volume"] }}</td>
+            <td>{{ crypto["market_cap"] }}</td>
+            <td><img src="{{ crypto['img_chart'] }}" class="booton" title="Ver grafica" onclick="window.modal1.showModal();" /></td>
           </tr>
           {% endfor %}
       </table>
       </section>
       <br>
 
-      
-      <script type="text/javascript">
-        async function fetchData() {
-            const response = await fetch("/data");
 
-            try {
-                const ventas = await response.json();
-                console.log(ventas); // Para ver el resultado
-                // Transformar los datos a formato compatible
-                const data = [["Date", "Price"], ...ventas.map(v => [String(v.date), v.price])];
-
-                console.log(JSON.stringify(data)); // Para ver el resultado
-                return data;
-
-            } finally {
-                console.log("Error al obtener los datos");
-            }
-        }
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-        
-        function drawChart() {
-          fetchData().then(data => {
-            var data = google.visualization.arrayToDataTable(JSON.stringify(data));
-              // Simulación de uso en Google Charts
-              console.log(`var data = google.visualization.arrayToDataTable(${JSON.stringify(data)});`);
-          });
-
-          var options = {
-            title: 'Euro',
-            curveType: 'function',
-            legend: { position: 'bottom' }
-          };
-  
-          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-  
-          chart.draw(data, options);
-        }
-      </script>
       <dialog id="modal1" class="modal_menu">
         <div>
           <h2>Acciones:</h2>
@@ -167,7 +156,67 @@
           <h2>Grafica evolución dolar:</h2>
           <img src="{{ url_for('static', path='boton.png') }}" class="booton" title="Cerrar ventana" onclick="window.modal_dolar.close();" />
         </div>
-        <div id="curve_chart" style="width: 100%;"></div>  
+        <label><input type="radio" name="range" value="day" checked> Día</label>
+        <label><input type="radio" name="range" value="week"> Semana</label>
+        <label><input type="radio" name="range" value="month"> Mes</label>
+        <label><input type="radio" name="range" value="year"> Año</label>
+        <div id="curve_chart" style="width: 100%;"></div> 
+              
+      <script type="text/javascript" >
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(initChart);
+
+
+        let chart;
+        let allData = [];
+
+        async function fetchData(range = "day") {   
+            try {
+                const response = await fetch(`/data?range=${range}`);
+                const jsondolar = await response.json();
+                console.log(jsondolar);
+                allData = jsondolar.euro.map(v => ({
+                    date: new Date(v.date),
+                    price: v.price
+                }));
+
+                drawChart(); // Redibujar al cargar datos
+            } catch (error) {
+                console.error("Error al obtener los datos:", error);
+            }
+        }
+
+        function drawChart() {
+            if (!allData.length) return;
+
+            const data = new google.visualization.DataTable();
+            data.addColumn('string', 'Fecha');
+            data.addColumn('number', 'Precio');
+
+            allData.forEach(v => {
+                data.addRow([v.date.toISOString().split("T")[0], v.price]);
+            });
+
+            const options = {
+                title: 'Precio del Dólar',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            chart.draw(data, options);
+        }
+
+        function initChart() {
+            chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+            fetchData();
+
+            document.querySelectorAll('input[name="range"]').forEach(input => {
+                input.addEventListener("change", (event) => {
+                    fetchData(event.target.value);
+                });
+            });
+        }
+     </script> 
       </dialog>
       <script>
         $(document).ready( function () {
