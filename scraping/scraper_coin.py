@@ -115,7 +115,7 @@ def scrape_data():
 
     except Exception as e:
         print(f"❌ scraper_cron.py Error on init scraping: {e}")
-        return {"error": str(e)}
+        
 
     finally:
         wr.write_log("Closing driver")

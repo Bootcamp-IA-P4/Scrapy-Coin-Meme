@@ -111,7 +111,7 @@ def obtener_coleccion(name_coleccion, date_first):
         
         collection_precio_dolar = db["precio_dolar"]  # Selecciona la colección de precios del dólar
         ultimo_dolar = collection_precio_dolar.find_one(sort=[("_id", -1)])  # Recupera el último documento por _id
-        #print("<<<<----Precio seleccion", len(documentos), ultimo_date["_id"] , ultimo_dolar["price"], ultimo_dolar["date"], ultimo_dolar["_id"])
+        print("<<<<----Precio seleccion", len(documentos), ultimo_date["_id"] , ultimo_dolar["price"], ultimo_dolar["date"], ultimo_dolar["_id"])
         return documentos, ultimo_date["date"], ultimo_dolar["price"]
     except Exception as e:
         print(f"❌ connect.py/obtener_coleccion Error al obtener colección: {e}, {name_coleccion}")
@@ -143,10 +143,10 @@ def get_data_euro(range: str = Query("day", enum=["day", "week", "month", "year"
         #now = datetime(now, tzinfo=timezone.utc)
         query = {"date": {"$gte": start_date, "$lte": now}}
 
-        print(f"📅 Fecha de inicio: {now}, Fecha final: {start_date}") 
+        #print(f"📅 Fecha de inicio: {now}, Fecha final: {start_date}") 
          
         items = list(collection.find(query).sort("date", -1).limit(30))
-        print(f"✅ Datos de euro chart: {len(items)}")
+        #print(f"✅ Datos de euro chart: {len(items)}")
         wr.write_log(f"📅 Periodo seleccionado: {range}")
         wr.write_log(f"📅 Fecha de inicio: {now}, Fecha final: {start_date}")
         wr.write_log(f"✅ Datos de euro chart: {len(items)}")
@@ -164,3 +164,13 @@ def get_collection(collection_name: str) -> Collection:
     client = obtener_conexion(collection_name)
     db = client["ejercicio"]
     return db[collection_name]
+
+## para websocket
+async def consultar_mongo():
+    client = obtener_conexion("WebSocket")
+    db = client["ejercicio"]
+    collection_fecha = db["fecha"]  # Selecciona la colección de fechas
+    ultimo_date = collection_fecha.find_one(sort=[("_id", -1)]) # Último registro
+    if ultimo_date:
+        return ultimo_date["date"]
+    return "No hay nuevas notificaciones", datetime.utcnow()

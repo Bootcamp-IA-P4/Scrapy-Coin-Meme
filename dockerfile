@@ -80,8 +80,8 @@ RUN chmod  +x /app/script-cron_coin.py
 COPY . .
 # EStablecer el horario de cron
 ENV PATH="/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/sbin"
-RUN echo "*/1 * * * * DISPLAY=unix:0.0 /usr/local/bin/python /app/script-cron_dolar.py >> /var/log/cron.log 2>&1" > /etc/cron.d/cronfile_d 
-RUN echo "*/1 * * * * DISPLAY=unix:0.0 /usr/local/bin/python /app/script-cron_coin.py >> /var/log/cron.log 2>&1" >> /etc/cron.d/cronfile_d
+RUN echo "*/10 * * * * DISPLAY=unix:0.0 /usr/local/bin/python /app/script-cron_dolar.py >> /var/log/cron.log 2>&1" > /etc/cron.d/cronfile_d 
+RUN echo "*/10 * * * * DISPLAY=unix:0.0 /usr/local/bin/python /app/script-cron_coin.py >> /var/log/cron.log 2>&1" >> /etc/cron.d/cronfile_d
 
 # Dar permisos a los archivos cronfile
 RUN chmod 0644 /etc/cron.d/cronfile_d && \
