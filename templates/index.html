@@ -173,7 +173,7 @@
             </li>
             <dialog id="modal_auth" class="modal_menu">
               <div>
-                <h2>Mis datos:</h2>
+                <h2>Pasar .pdf a texto:</h2>
                 <img
                   src="{{ url_for('static', path='boton.png') }}"
                   class="booton"
@@ -181,9 +181,28 @@
                   onclick="window.modal_auth.close();"
                 />
               </div>
-              <p>{{ request.session.get('username') }}</p>
-              <p>{{ request.session.get('id') }}</p>
-              <p>{{ request.session.get('password') }}</p>
+              <form id="miFormulario">
+                <input type="url" id="mensaje" name="mensaje" placeholder="https://" required>
+                <button type="submit">Transformar</button>
+              </form>
+              <div id="respuesta"></div>
+              <script>
+                document.getElementById("miFormulario").addEventListener("submit", async function(event) {
+                    event.preventDefault(); // Evita que se recargue la página
+        
+                    // Obtener el dato del input
+                    const formData = new FormData(this);
+        
+                    // Enviar al backend con Fetch
+                    const response = await fetch("/pdf", {
+                        method: "POST",
+                        body: formData
+                    });
+        
+                    const result = await response.json();
+                    document.getElementById("respuesta").innerText = result.respuesta;
+                });
+            </script>
             </dialog>
             {% else %}
             <li class="nav-item">
