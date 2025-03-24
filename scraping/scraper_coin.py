@@ -50,6 +50,18 @@ def scroll_and_wait(driver):
         driver.execute_script("window.scrollBy(0, 2000);")  # Scroll suave
         time.sleep(1.5)  # Esperar a que se carguen nuevos elementos
 
+def hacer_click(driver, class_name):
+    """Busca un enlace por su clase y hace clic en él"""
+    try:
+        enlace = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.CLASS_NAME, class_name))
+        )
+        enlace.click()
+        print(f"Se hizo clic en el enlace con clase '{class_name}'")
+        
+    except Exception as e:
+        print(f"Error al hacer clic: {e}")
+
 # Función para extraer datos de una fila
 def extract_row_data(row):
     wr.write_log("✅ Init extract_row_data")
@@ -60,10 +72,11 @@ def extract_row_data(row):
             rank: row.querySelector("p.jBOvmG")?.innerText || '',
             name: row.querySelector("p.iPbTJf")?.innerText || '',
             price: row.querySelector("div.lmjbLF span")?.innerText || '',
-            market_cap: row.querySelector("span.chpohi")?.innerText || '',
+            market_cap: row.querySelector("span.fDGzbr")?.innerText || '',
             volume: row.querySelector("a.cmc-link p.bbHOdE")?.innerText || '',
             supply: row.querySelector("div.circulating-supply-value span")?.innerText || '',
-            image_url: row.querySelector("img.coin-logo")?.src || ''
+            image_url: row.querySelector("img.coin-logo")?.src || '',
+            img_chart: row.querySelector("img.ebVlnd")?.src || '',
         };
         """
         return row.parent.execute_script(script, row)
@@ -75,18 +88,18 @@ def extract_row_data(row):
 def scrape_data():
     wr.write_log("✅ Init scrape_data on coinmarketcap.com")
     driver = get_driver()
-    #driver.get("https://coinmarketcap.com/es/view/memes/")
-    driver.get("https://coinmarketcap.com/es/")
+    driver.get("https://coinmarketcap.com/es/view/memes/")
+    #driver.get("https://coinmarketcap.com/es/")
     
     try:
         # Esperar a que la tabla aparezca
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "tr"))
         )
-
+        
         # Hacer scroll suave para cargar todos los datos
         scroll_and_wait(driver)
-
+        hacer_click(driver, "chevron") 
         # Extraer filas después de hacer scroll
         rows = driver.find_elements(By.CSS_SELECTOR, "tr")[1:]  # Omitir encabezado
         total_elements = len(rows)
@@ -102,7 +115,7 @@ def scrape_data():
 
     except Exception as e:
         print(f"❌ scraper_cron.py Error on init scraping: {e}")
-        return {"error": str(e)}
+        
 
     finally:
         wr.write_log("Closing driver")

@@ -1,5 +1,7 @@
 import os
-LOG_PATH = os.path.join(os.path.dirname(__file__),  "./"+os.getenv("LOG_TXT", "log.txt"))
+from dotenv import load_dotenv
+load_dotenv()
+LOG_PATH = os.path.join(os.path.dirname(__file__),  "/app/"+os.getenv("LOG_TXT", "log.txt"))
 def leer_archivo():
     try:
         with open(LOG_PATH, "r", encoding="utf-8") as archivo:

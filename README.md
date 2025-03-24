@@ -18,23 +18,36 @@
 
 ### 🟡 Nivel Medio:
 - ✅ Almacenamiento de los datos en una base de datos estructurada.
-    - Limpiea de los datos sobre todo en los números
+    - Limpiea de los datos sobre todo en los importe, pasar de dolar a euro
 - ✅ Implementación de logs para trazabilidad del scraper.
-- ❌ Tests unitarios para validar el funcionamiento del código.
+- ✅ Tests unitarios para validar el funcionamiento del código.
+    Test unitarios:
+    1. Connect to database
+    2. Create document seguimiento log.txt
+    3. Server ON --> requeste 200
 
 ### 🟠 Nivel Avanzado:
 - ❌ Uso de Programación Orientada a Objetos (OOP) para mejorar la estructura del código.
-- ✅ Manejo robusto de errores para evitar bloqueos y baneos de IP.
+-  Manejo robusto de errores para evitar bloqueos y baneos de IP.
 - ✅ Automatización del scraper para actualizar periódicamente la base de datos con tareas Cron.
+    - Obtención de monedas
+    - Obtención del Dolar Euro
 
 ### 🔴 Nivel Experto:
 - ✅ Dockerización completa del proyecto para facilitar despliegue y escalabilidad.
+    [Image public](https://hub.docker.com/r/jcmacias/scraping)
 - ✅ Implementación de un frontend interactivo para visualizar datos en tiempo real.
 - ✅ Despliegue en un servidor accesible públicamente.
+    [Enlace despliege](https://scraping-v1-0.onrender.com/)
 - ✅ Integración con múltiples sitios web de empleo para mejorar la cantidad y calidad de datos recopilados.
 
 ## Prerequisites
 - Ensure Docker is running
+## important
+1. Debe haber una base de datos mongo, el que se referencia desde el .env ejemplo:
+    ```sh
+    mongodb+srv://user-name:user-password@url-mongodb.net/?retryWrites=true&w=majority&appName=name-database
+    ```
 
 ## Steps to Run
 1. Build and start the containers:

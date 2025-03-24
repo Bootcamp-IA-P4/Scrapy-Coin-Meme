@@ -1,6 +1,6 @@
 
 from datetime import datetime
-import dolar as dl
+import scraping.scraper_dolar as dl
 import mongo.connect as mc
 import app_base.write_log as wr
 

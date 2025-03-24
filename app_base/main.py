@@ -1,26 +1,72 @@
-from fastapi import FastAPI, Request, Form,  Response
+import os
+from fastapi import FastAPI, Request, Form,  Response, Query, Depends, HTTPException, WebSocket
+from fastapi.security import OAuth2PasswordBearer
 from fastapi.responses import HTMLResponse, RedirectResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from starlette.middleware.sessions import SessionMiddleware
+from dateutil import parser
+import app_base.auth.auth
 import pandas as pd
 from datetime import datetime
+from app_base.websocket.manager_websocket import websocket_endpoint
 from app_base.cadenas_ale import generar_cadena_aleatoria
 
 import mongo.connect as mc
 import app_base.write_log as wr
 import app_base.archivo as arch
 
-app = FastAPI()
+app = FastAPI(
+    title="Scraping de Criptomonedas & autenticación",
+    description="A FastAPI-based authentication system connected to MongoDB",
+    version="1.0.0"
+)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory = "templates")
 
+# LOGIN ---
+# Add session middleware
+app.add_middleware(
+    SessionMiddleware, 
+    secret_key=os.environ.get("SESSION_SECRET", "supersecretkey")
+)
+
+# Setup OAuth2 scheme
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
+
+# Include auth router
+app.include_router(app_base.auth.auth.router)
+@app.get("/register", response_class=HTMLResponse)
+async def register_page(request: Request):
+    return templates.TemplateResponse(request, "register.html", {"request": request})
+
+@app.get("/login", response_class=HTMLResponse)
+async def login_page(request: Request):
+    return templates.TemplateResponse(request, "login.html", {"request": request})
+
+@app.get("/protected")
+async def protected_route(token: str = Depends(oauth2_scheme)):
+    """
+    Protected route that requires authentication
+    """
+    credentials = app_base.auth.verify_token(token)
+    if not credentials:
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid authentication credentials",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    return {"message": f"Hello, {credentials['username']}! This is a protected route."}
+
+# LOGIN ---
 @app.api_route("/data", methods=["GET", "POST"])
-async def show_database(request: Request):
+async def show_database(range: str = Query("day", enum=["day", "week", "month", "year"])):
     try:
-        dolar_price = mc.get_data_euro()
+        dolar_price = mc.get_data_euro(range)
         wr.write_log(f"✅ Datos de dólar recuperados correctamente")
-        return {"dolar_price": dolar_price}
+        #print("seleccionado", dolar_price)  
+        return dolar_price
     except Exception as e:
         wr.write_log(f"❌ Error al recuperar datos: {e}")
         print(f"❌ Error al recuperar datos: {e}")
@@ -48,8 +94,7 @@ def excel(request: Request):
     return FileResponse(archivo, filename=archivo, media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
 
-# Endpoint para lanzar el scraping en un hilo separado
-
+# Ruta principal
 @app.get("/", response_class=HTMLResponse)
 def show_database_all(request: Request):
     try:
@@ -60,18 +105,26 @@ def show_database_all(request: Request):
             precio_float = round(float(precio), 2)*round(float(price_dolar), 2)
             item["euro"] = round(precio_float, 2)
         wr.write_log(f"✅ Datos recuperados correctamente")
+        
     except Exception as e:
         wr.write_log(f"❌ Error al recuperar datos {e}")
         print(f"❌ Error al recuperar algo {e}")
         result = []  # Devolver una lista vacía en caso de error
         lectura = ""
+        last_date = None
+        price_dolar = None
+
+    #print("TYPE DATE", type(last_date))
+    format_date = last_date.strftime("%Y-%m-%d %H:%M:%S")
     return templates.TemplateResponse(request, "index.html", {
         "request": request,
         "lectura": lectura,
-        "last_date": last_date.strftime("%d-%m-%Y %H:%M:%S"),
+        "last_date": format_date,
         "cryptos": result,
         "price_dolar": price_dolar
     })
 
+# WebSocket como una ruta
+app.add_api_websocket_route("/ws", websocket_endpoint)
 if __name__ == "__main__":
     app.run(debug=True)

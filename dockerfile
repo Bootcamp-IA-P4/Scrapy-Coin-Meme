@@ -1,6 +1,11 @@
 # Usar la imagen oficial de Python
+# subir imagnes a docker hub
+# docker build -t jcmacias/scraping:v1.0 --> nombre del repositorio .  <- importante el punto al final
+# docker push jcmacias/scraping:v1.0
+# docker run -d -p 8000:8000 jcmacias/scraping:v1.0
 ARG PYTHON_VERSION=3.11.11
-FROM python:${PYTHON_VERSION}-slim as builder
+FROM python:${PYTHON_VERSION}-slim AS builder
+
 #FROM python:3.10.8-slim
 #FROM selenium/standalone-chrome:latest 
 # Establecer el directorio de trabajo
@@ -55,8 +60,8 @@ RUN python -m pip install --no-cache-dir -r requirements.txt
 #ENV CHROMIUM_PATH="/usr/bin/chromium"
 ENV CHROMEDRIVER_PATH="/usr/local/bin/geckodriver"
 ENV LOG_TXT="log.txt"
-COPY log.txt /app/${LOG_TXT}
-
+#COPY log.txt /app/${LOG_TXT}
+  
 ENV PYTHONPATH=/app
 
 # Permisos en directorios
@@ -64,6 +69,7 @@ RUN mkdir -p /app && \
     chmod -R 777 /app
 RUN mkdir -p /var/log
 
+ RUN touch -a ${LOG_TXT}
 # Copiar archivos/scripts al contenedor
 COPY script-cron_dolar.py /app/script-cron_dolar.py
 RUN chmod +x /app/script-cron_dolar.py
